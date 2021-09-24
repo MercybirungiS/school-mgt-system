@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+    
+    margin-left: 300px;
+    height:50%;
+    width:80%;
+  
+    z-index:1;
+    top: 0;
+  overflow-x: hidden;
+    }
+
+table{
+    width: 100%;
+    margin-left: -15%;
+    margin-top: 5%;
+    margin-bottom: 8%;
+}
+
+th, caption{
+    text-align: left;
+}
+
+table, th, td{
+    border: 1px solid #c200a8;
+;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 15px;
+}
+/* 
+tr:nth-child(even){
+    background-color: rgb(255, 255, 255);
+}
+
+tr:nth-child(odd){
+    background-color:rgb(255, 255, 255);
+} */
+
+
+
+    h1{
+        margin-left: 250px;
+        color: rgb(0, 0, 0);
+    }
+    img{
+        width: 100px ;
+        height:100px ;
+        border-radius: 10px;
+    }
+    /* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background:white;
+}
+::-webkit-scrollbar-thumb {
+    background: #c20098;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:#c200a2;
+}
+.info {
+  border-color: #c200a8;
+  color:#c200a8;
+}
+  
+.info:hover {
+  background:#c200a8;
+  color: white;
+}
+
+.info {
+  border-color: #c200a8;
+  color:#c200a8;
+}
+
+.info:hover {
+  background:#c200a8;
+  color: white;
+}
+.clearfix {
+  margin-left: -160px;
+ 
+}
+.btn{
+  background-color:#ffffff;
+  color:#c200a8;
+  border-radius: 10px;
+  padding: 10px;
+  align-items: center;
+  width: 300px;
+  margin-right: 71px;
+  border: 1px solid #c200a8;
+}
+a{
+    text-decoration: none;
+}
+.navbar{
+    
+    width: 100%;
+    z-index: 999;
+    /* padding: 5px 0; */
+    padding-bottom: -50px;
+    font-family: 'Roboto Slab', serif;
+    transition: all 0.3s ease;
+    /* margin-top: 20px; */
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: #c200b8;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: rgb(104, 1, 145);
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: #000000;
+    text-decoration: none;
+}
+
+.navbar .logo a{
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    font-weight: 600;
+    font-family: 'Style Script', cursive;
+   
+}
+
+
+.navbar .logo a span{
+    color: #ffffff;
+    transition: all 0.3s ease;
+    font-family: 'Style Script', cursive;
+   
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">C<span>Q</span></a></div>
+            <ul class="menu">
+                <li><a href="{%url 'home_page'%}" class="menu-btn">Home</a></li><li><a href="{%url 'student_list'%}"class="menu-btn">Students</a></li>
+                <li><a href="{%url 'trainer_list'%}"class="menu-btn">Trainers</a></li>
+                <li><a href="{%url 'course_list'%}"class="menu-btn">Courses</a></li>
+               <li><a href="{%url 'cal:calendar'%}"class="menu-btn">Events</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+ 
+    <div class="clearfix">
+        <a class="btn info" href="{% url 'register_trainer' %}"> ADD TRAINER </a>
+        </div>
+
+    <div class="vl"></div>
+    <center><h1>Trainer List</h1></center>
+
+    <table class="table">
+        <tr>
+            <th>Profile Pic</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Course Name</th>            
+            <th>Email Address</th>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>Edit</th>
+            <th>Profile</th>
+            <th>Delete</th>
+        </tr>
+        {% for trainer in trainers%}
+        <tr>
+            <td>
+                {% if trainer.profile_pic %}
+
+                <img src="{{trainer.profile_pic.url}}">
+                {% endif %}
+
+            </td>
+            <td>
+                {{trainer.first_name}}
+            </td>
+            <td>
+                {{trainer.last_name}}
+            </td>
+            <td>
+                {{trainer.course_name}}
+            </td>
+            <td>
+                {{trainer.email_address}}
+            </td>
+            <td>
+                {{trainer.job_title}}
+            </td>
+            <td>
+                {{trainer.company}}
+            </td>
+            <td>
+                <a href="{%url 'edit_trainer' id=trainer.id%}">Edit</a>
+            </td>
+
+            <td>
+                <a href="{%url 'trainer_profile' id=trainer.id%}">Profile</a>
+            </td>
+
+            <td>
+                <a href="{%url 'delete_trainer' id=trainer.id%}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    
+   <style>
+       *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  
+}
+
+footer{
+    text-align: center;
+    margin-top: 20px;
+  
+    font-weight: bold;
+}
+img{
+    height: 400px;
+    width:500px;
+    margin-top: -50px; 
+}
+.left{
+    padding-left: 300px;
+}
+
+.text-2{
+    padding-bottom:10px;
+    font-size:20px;
+    font-weight: 500;
+    padding-left: -10px;
+    text-shadow: #000000;
+}
+    
+ .home_content{
+     z-index: 999;
+
+ }
+    
+
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+html{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background:white;
+}
+::-webkit-scrollbar-thumb {
+    background: #c20098;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:#c200a2;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 100px; 
+    margin: auto;
+}
+
+
+/* navbar styling */
+.navbar{
+    
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    /* padding: 5px 0; */
+    padding-bottom: -60px;
+    font-family: 'Roboto Slab', serif;
+    transition: all 0.3s ease;
+    /* margin-top: 20px; */
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: #c200b8;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    font-weight: 600;
+    font-family: 'Style Script', cursive;
+   
+}
+
+
+.navbar .logo a span{
+    color: #c200a8;
+    transition: all 0.3s ease;
+    font-family: 'Style Script', cursive;
+   
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: rgb(104, 1, 145);
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: #000000;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* home section styling */
+.home{
+    display: flex;
+    background:   url("") no-repeat center;
+    /* background: url("https://satmatgroup.com/school_management_software/bootstrap/image/why_school_management_software_opt.png") no-repeat center; */
+background-color:#bd00bd;
+    background-blend-mode: screen;
+    height: 50vh;
+    color: #fff;
+    min-height: 500px;
+    opacity: 90%;
+    background-size: 65%;
+    background-attachment: fixed;
+    font-family: 'Roboto Slab', serif; 
+}
+.home .max-width{
+  width: 100%;
+  /* display: flex; */
+  display: flex;
+}
+.home .max-width .row{
+  margin-right: 6px;
+}
+
+.home .home-content .text-2{
+ 
+    font-size: 40px;
+    font-weight: 600;
+    margin-left: -3px;
+    text-align: center;
+    padding-bottom: -70px;
+}
+
+.student{
+             
+             background: white;
+             width: 40%;  
+             
+              font-size: 20px;  
+              font-weight: bolder;
+              padding: 10px; 
+              /* padding-right: 10px;   */
+              margin: 10px 0px;   
+              border: solid 2px #f7f7f7;
+              cursor: pointer; 
+              border-radius: 10px;  
+              margin-right: 20px;
+              color:#bd00bd ;
+             }
+.course{
+             
+             background: white;
+             width: 40%;  
+             
+              font-size: 20px;  
+              font-weight: bolder;
+              padding: 10px; 
+              /* padding-right: 10px;   */
+              margin: 10px 0px;   
+              border: solid 2px #f7f7f7;
+              cursor: pointer; 
+              border-radius: 10px;  
+              margin-right: 20px;
+              color: #bd00bd;
+             }
+ .trainer{
+             
+             background: white;
+             width: 40%;  
+             
+              font-size: 20px;  
+              font-weight: bolder;
+              padding: 10px; 
+              /* padding-right: 10px;   */
+              margin: 10px 0px;   
+              border: solid 2px #f7f7f7;
+              cursor: pointer; 
+              border-radius: 10px;  
+              margin-right: 20px;
+              color: #bd00bd;
+             }
+.events{
+             
+             background: white;
+             width: 40%;  
+             
+              font-size: 20px;  
+              font-weight: bolder;
+              padding: 10px; 
+              /* padding-right: 10px;   */
+              margin: 10px 0px;   
+              border: solid 2px #ffffff;
+              cursor: pointer; 
+              border-radius: 10px;  
+              margin-right: 20px;
+              color: #bd00bd;
+             }
+             button:hover {   
+              opacity: 0.7; 
+              background:none;  
+              border: solid 2px #ffffff;
+              color: rgb(255, 255, 255);}
+
+   </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+   
+
+<body>    
+    
+     <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">C<span>Q</span></a></div>
+            
+            <ul class="menu">
+                <li><a href="{%url 'home_page'%}" class="menu-btn">Home</a></li>
+
+                <li><a href="{%url 'student_list'%}"class="menu-btn">Students</a></li>
+                <li><a href="{%url 'trainer_list'%}"class="menu-btn">Trainers</a></li>
+                <li><a href="{%url 'course_list'%}"class="menu-btn">Courses</a></li>
+               <li><a href="{%url 'cal:calendar'%}"class="menu-btn">Events</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- home section start -->
+    <section class="home" id="home">
+        
+        <div class="max-width">
+            <div class="home-content"> 
+             
+               <h2 class="text-2">Code Queen School System</h2> 
+                    <button class="student">{{student}} Students</button>
+                    <button class="trainer">{{trainer}} Trainers</button>    
+                    <button class="course">{{course}} Courses</button>
+                    <button class="events">{{events}} Events</button>
+
+                    
+                
+                    
+              
+            </div>
+            <div class="left">
+                <img src="https://satmatgroup.com/school_management_software/bootstrap/image/why_school_management_software_opt.png" alt="image">
+            </div>
+        </div>
+
+       
+    </section> 
+    <footer>@CodeQueen2021</footer>
+  
+    
+</body>
+</html>
