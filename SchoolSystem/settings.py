@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2p@+tq6gdsw0b50xp%wzvor1j&lm62-&uy7mnoapgamx&&f5f2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','ssozi-mercy.herokuapp.com']
 
@@ -94,6 +94,7 @@ DATABASES = {
         'PASSWORD': 'birungi',
         'HOST': 'localhost',
         'PORT': '5432',
+      
     }
 }
 

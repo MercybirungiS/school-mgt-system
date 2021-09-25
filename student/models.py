@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models.enums import Choices
-from datetime import date
+from datetime import date, datetime
 from django.db.models.fields.files import FileField, ImageField
 # Create your models here.
 
@@ -32,5 +32,16 @@ class Student(models.Model):
     laptop_serial_number=models.CharField(max_length=30, null=True, blank= True)
     academic_year=models.CharField(max_length=12)
     course_name=models.CharField(max_length=25, null=True, blank=True)
+
+    def full_name(self):
+        return f"{self.first_name}{self.last_name}"
+    def year_of_birth(self):
+        current_year=datetime.datetime.now().year
+        return current_year-self.age
+
+        
+        
+        
+        
 
 
