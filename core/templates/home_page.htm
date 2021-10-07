@@ -7,11 +7,141 @@
 <title>Document</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body {font-family: "Lato", sans-serif;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #F6F9FF;
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #434343;
+
+    font-size: 16px;
+}
+
+main.cards {
+    display: flex;
+    padding: 32px;
+}
+
+main.cards section.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-height: 468px;
+    margin-left: 32px;
+}
+
+main.cards section.card:first-child {
+    margin-left: 0;
+}
+
+main.cards section.card .icon {
+    width: 64px;
+    height: 64px;
+}
+
+main.cards section.card img {
+    width: 100%;
+}
+
+main.cards section.card h3 {
+    font-size: 100%;
+    margin: 16px 0;
+}
+
+main.cards section.card span {
+    font-weight: 300;
+    max-width: 240px;
+    font-size: 80%;
+    margin-bottom: 16px;
+}
+
+main.cards section.card button {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 16px 0;
+}
+
+main.cards section.card.contact button {
+    background: linear-gradient(to right, #9F66FF, #DFCBFF);
+}
+main.cards section.card.shop button {
+    background: linear-gradient(to right, #3E8AFF, #BBDEFF);
+}
+main.cards section.card.about button {
+    background: linear-gradient(to right, #FE5F8F, #FFC7D9);
+}
+
+main.cards section.card.contact {
+    box-shadow: 20px 20px 50px -30px #DBC4FF;
+}
+main.cards section.card.shop {
+    box-shadow: 20px 20px 50px -30px #AFD6FF;
+}
+main.cards section.card.about {
+    box-shadow: 20px 20px 50px -30px #FFC1D5;
+}
+
+@media screen and (max-width: 720px) {
+    main.cards {
+        flex-direction: column;
+    }
+
+    main.cards section.card {
+        margin-left: 0;
+        margin-bottom: 32px;
+    }
+
+    main.cards section.card:last-child {
+        margin-bottom: 0;
+    }
+
+    main.cards section.card button {
+        font-size: 70%;
+    }
+
+}
 
 h2{
-    text-align: center;
+  padding-left: 20px;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background:white;
+}
+::-webkit-scrollbar-thumb {
+    background: #c20098;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:#c200a2;
+}
+
+
 
 .sidebar {
   height: 100%;
@@ -26,7 +156,7 @@ h2{
 }
 
 .sidebar a {
-  padding: 6px 8px 6px 16px;
+  padding: 20px;
   text-decoration: none;
   font-size: 20px;
   color: #000000;
@@ -37,20 +167,16 @@ h2{
   color: #f1f1f1;
 }
 
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  padding: 0px 10px;
-}
 
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
+
+ 
+
 </style>
 </head>
 <body>
 
 <div class="sidebar">
+  <center> <h1>C <span> Q</span></h1> </center>
   <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
   <a href="#student"><i class="fa fa-fw fa-graduation-cap"></i> Students</a>
   <a href="#trainers"><i class="fa fa-fw fa-user"></i> Trainers</a>
@@ -58,14 +184,40 @@ h2{
   <a href="#events"><i class="fa fa-fw fa-calendar"></i> Events</a>
 
 </div>
+<!-- <img src="https://www.academyfront.com/images/blog/school-software.png" alt=""> -->
 
-<div class="main">
-  <h2>Code Queen School System</h2>
-  <p>This side navigation is of full height (100%) and always shown.</p>
-  <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-</div>
-     
+<main class="cards">
+  <section class="card contact">
+      <div class="icon">
+          <img src="https://www.pngitem.com/pimgs/m/235-2350916_student-netid-login-transparent-background-student-icon-hd.png" alt="Students.">
+      </div>
+      <h3>Students.</h3>
+      <button>{{student}} Students</button>
+  </section>
+  <section class="card shop">
+      <div class="icon">
+          <img src="https://websites.ucr.edu/sites/g/files/rcwecm301/files/styles/form_preview/public/education-icon.png?itok=y0rzpT_2" alt="Trainers.">
+      </div>
+      <h3>Trainers.</h3>
+      <button>{{trainer}} Trainers</button>
+  </section>
+  <section class="card about">
+      <div class="icon">
+          <img src="https://i.pinimg.com/originals/49/80/d7/4980d751d522ce2eb66e28c45ced8ed0.jpg" alt="Courses.">
+      </div>
+      <h3>Courses.</h3>
+      <button>{{course}} Courses</button>
+  </section>
+  <section class="card about">
+    <div class="icon">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeP6yFfPwCEiawAI_GuX4xLgiAzbZ3he7LiA&usqp=CAU" alt="Events.">
+    </div>
+    <h3>Events.</h3>
+    <button>{{events}} Events</button>
+</section>
+</main>
+
+
 </body>
 </html> 
 
